@@ -1,3 +1,4 @@
+# This is a sample test file. Replace its content with your actual tests.
 
 def test_search(session):
     r = session.get('https://tmdb-discover.surge.sh')
