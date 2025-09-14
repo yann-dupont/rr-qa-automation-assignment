@@ -1,0 +1,8 @@
+# Test strategy
+
+This test framework was designed without much information about the product. As such, many techniques couldn't be used, such as whitebox techniques. Techniques like equivalence partitionning also couldn't be used, since it would require knowing for instance what inputs the API is required to support for the minimum and maximum years.
+I used error guessing to determine what would be likely problem points, for instance in the performance tests. I also did some exploratory testing on the UI to find some issues, and then designed test cases to catch these issues.
+
+This lead to a set of test cases that comprises many unit tests, component integration tests that use several features at once, as well as some performance tests. Next steps would be to add actual integration tests, that would include other features such as account management, giving ratings or saving movies to a list, and integrate them with the existing features. It also lacks UI and usability tests, as well as compatibility test (testing on several browsers, etc).
+
+This approach was implemented using the paradigm of pytest : several file representing test cases, which are entirely separated from the logic of the framework and ordered by feature / use case category. A `conftest.py` file parametrises the tests and passes them fixtures (an HTML session and the base URL in this example). This make is very easy to make changes to the configuration that will apply to every test.

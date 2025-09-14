@@ -5,6 +5,7 @@ As the API is not documented, this repo *does not implement any actual test*. Ho
 
 ## Structure
 Documentation :
+- `test_strategy.md` describes the logic behind the design of this framework
 - `testcase_description.md` documents the list of all planned test cases
 - `test_results.md` lists the defects found while working on this framework
 - `CI.md` explains an approach to integrating these tests on a CI environment
@@ -27,8 +28,11 @@ pip install -r requirements_frozen.txt
 ```
 pytest -s
 ```
+Running this command will collect and execute all tests in the repo. The results of the tests will be printed in the console, output to a `test.log` file, and an HTML report will also be generated to `test_report.html`.
 
 ### Run a specific test
+To run a specific test, simply add its path as an argument to the pytest call.
 ```
-pytest -s <path to test file or test function>
+pytest -s <path_to_test_file_or_test_function>
 ```
+The same comments as the above section apply here also.
