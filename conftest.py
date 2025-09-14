@@ -12,6 +12,10 @@ from requests_html import HTMLSession
 def session():
     return HTMLSession()
 
+@pytest.fixture(scope="session")
+def base_url():
+    return 'https://tmdb-discover.surge.sh'
+
 def pytest_configure(config):
     setup_logging()
 
